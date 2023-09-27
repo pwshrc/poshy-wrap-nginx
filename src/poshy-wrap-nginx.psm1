@@ -26,6 +26,7 @@ function nginx_reload {
         Write-Error "Nginx pid file not found"
     }
 }
+Export-ModuleMember -Function nginx_reload
 
 <#
 .SYNOPSIS
@@ -46,6 +47,7 @@ function nginx_stop {
         Write-Error "Nginx pid file not found"
     }
 }
+Export-ModuleMember -Function nginx_stop
 
 <#
 .SYNOPSIS
@@ -65,6 +67,7 @@ function nginx_start {
         Write-Error "Couldn't start nginx"
     }
 }
+Export-ModuleMember -Function nginx_start
 
 <#
 .SYNOPSIS
@@ -79,6 +82,4 @@ function nginx_restart() {
     }
     nginx_start
 }
-
-
-Export-ModuleMember -Function * -Alias *
+Export-ModuleMember -Function nginx_restart
